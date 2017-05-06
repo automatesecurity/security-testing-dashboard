@@ -5,7 +5,8 @@ This project is a proof of concept for tracking 'projects' that have had securit
 ## Requirements
 The Security Testing Dashboard was created with the following components and versions; deviations may prevent the dashboard from operating properly. 
 
-* Ruby 5.0.2
+* Ruby 2.4.0 (x86_64-darwin16)
+* Rails v5.0.2
 * Bootstrap 4 Alpha
 * Highcharts JS
 * jQuery
