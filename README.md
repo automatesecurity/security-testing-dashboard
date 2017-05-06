@@ -1,24 +1,18 @@
-# README
+# Security Testing Dashboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a proof of concept for tracking 'projects' that have had security testing performed on them.
 
-Things you may want to cover:
+## Requirements
+The Security Testing Dashboard was created with the following components and versions; deviations may prevent the dashboard from operating properly. 
 
-* Ruby version
+* Ruby 5.0.2
+* Bootstrap 4 Alpha
+* Highcharts JS
+* jQuery
 
-* System dependencies
+## To-Do's
 
-* Configuration
+* DB Schema
+* Implement authentication/authorization (Devise with LDAP support)
+* Reporting
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
