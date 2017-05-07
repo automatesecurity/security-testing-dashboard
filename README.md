@@ -17,3 +17,21 @@ The Security Testing Dashboard was created with the following components and ver
 * Implement authentication/authorization (Devise with LDAP support)
 * Reporting
 
+## User Stories
+The following are high-level user stories for conceptualizing the features within the Security Testing Dashboard.
+
+*   As a visitor
+    > I want to be able to request access to the site
+    > so I can notify the admin 
+
+*   As a user
+    > I want to view a list of projects assigned to my department
+    > so I can view my department's metrics 
+
+*   As a user
+    > I want an option that will aloow me to export my department's data
+    > so I can leverage it outside of the application
+
+*   As the admin of the site
+    > I want to add and remove authorized users
+    > so that I can control access to the site 
