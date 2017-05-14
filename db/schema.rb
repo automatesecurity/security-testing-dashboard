@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514012655) do
+ActiveRecord::Schema.define(version: 20170514034329) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "link"
     t.text     "description"
     t.integer  "cost"
-    t.string   "type"
+    t.string   "test_type"
     t.string   "tester"
     t.string   "rp"
     t.string   "architect"
