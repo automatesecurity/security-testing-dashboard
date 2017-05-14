@@ -10,6 +10,9 @@ The Security Testing Dashboard was created with the following components and ver
 * Bootstrap 4 Alpha
 * Highcharts JS
 * jQuery
+* Gems
+  * HAML
+  * Simple Form
 
 ## To-Do's
 
