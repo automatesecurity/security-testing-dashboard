@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  link: MyString
+  description: MyText
+  cost: 1
+  type: 
+  tester: MyString
+  rp: MyString
+  architect: MyString
+  department: MyString
+
+two:
+  title: MyString
+  link: MyString
+  description: MyText
+  cost: 1
+  type: 
+  tester: MyString
+  rp: MyString
+  architect: MyString
+  department: MyString
