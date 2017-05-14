@@ -1,7 +1,9 @@
 language: ruby
 rvm:
   - 2.4
-install: gem install rails
+install: 
+  - gem install rails
+  - bundle install
 gemfile:
   - Gemfile
 
