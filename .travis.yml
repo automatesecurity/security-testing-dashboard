@@ -4,3 +4,20 @@ rvm:
 install: gem install rails
 gemfile:
   - Gemfile
+
+env:
+  global:
+   - secure: "N97wyglo/MpA8n5UJap01DLzNhjl4lYW16M/hz3R//+GY1Nhn2EpFqwhEF+yte5laQQUfZsmrQnE7p3IKanAiIaNoDFVN01moxar2996RscsghNwyVMlJBuId4C+Hp4Kv5XaVk6fGwZAa5htTsPNyNKakgQjRE2qqvsmE3zVSSCrs7bOtMsWBFXc0tO8oAT4XDCkqBsaeOg3H8gu4Mni/60bFFwfBotEayKrQ7CTVpMKQxDx2ZmG0nlF+Kh8kyTfJ92QsyUe8mOUqd0oGp3V1UGoAobkFw183DaJ5NrhO/7K0FV7c4PMbdGDUqwiTDW2axFMZAyUqFXzlsiPrrZpWRAlIW0yjZ7oYZWtfzYrJpC0KUeKMj7GGW2qh00ZWZi1h2UY/TuTee5mh503B574htiika0SOIqCn5r/Elb0+s9dVmQoanduL5F1WPxrmDVPAh71P70e32xWvzBa5eZy1H0Rbk51x6y9fpQ4hFTZt7AuTDhY/h3SxJnCcTOAQvljOX7xifA36sRhbAW8Ds7tRN2/tG/99w6FYiTWEzSRCwNu4JCsOBg0/9ydHAnjLzYQSHz/+gMKweclXJG9MtlJPbk1qh2WCm6TyvK8vd+/AuTnQKVgeN2XxnvM4I9JiRzDkXxLPmD+LdnTWYDX3ZCQICPcLwpK1ZQkDsFgOmxtobc="
+
+before_install:
+      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+  coverity_scan:
+    project:
+      name: "automatesecurity/security-testing-dashboard"
+      description: "Security Testing Dashboard project"
+    notification_email: daniel.wood@owasp.org
+    build_command_prepend: ""
+    build_command:   ""
+    branch_pattern: coverity_scan
