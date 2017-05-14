@@ -1,7 +1,7 @@
 # Security Testing Dashboard <a href="https://scan.coverity.com/projects/automatesecurity-security-testing-dashboard">
   <img alt="Coverity Scan Build Status"
        src="https://img.shields.io/coverity/scan/12715.svg"/>
-</a> [![Build Status](https://travis-ci.org/automatesecurity/security-testing-dashboard.svg?branch=master)](https://travis-ci.org/automatesecurity/security-testing-dashboard)
+</a> [![Build Status](https://travis-ci.org/automatesecurity/security-testing-dashboard.svg?branch=master)](https://travis-ci.org/automatesecurity/security-testing-dashboard) [![GitHub issues](https://img.shields.io/github/issues/automatesecurity/security-testing-dashboard.svg)](https://github.com/automatesecurity/security-testing-dashboard/issues)
 
 This project is a proof of concept for tracking 'projects' that have had security testing performed on them.
 
