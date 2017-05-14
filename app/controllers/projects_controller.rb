@@ -1,9 +1,11 @@
 class ProjectsController < ApplicationController
+  before_action :find_project, only: [:show, :edit, :update, :destroy]
+
   def index
+  	@projects = Project.all.order("created_at DESC")
   end
 
   def show
-  	@project = Project.find(params[:id])
   end
 
   def new
@@ -32,6 +34,7 @@ class ProjectsController < ApplicationController
   private
 
   def find_project
+  	@project = Project.find(params[:id])
   end
 
   def project_params
