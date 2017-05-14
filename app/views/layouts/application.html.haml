@@ -9,6 +9,16 @@
   %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
 
   %body
+    %header
+      .wrapper.clearfix
+      #logo= link_to "Security Testing Dashboard", root_path
+      %nav
+        - if user_signed_in?
+          = link_to "Add New Project", new_project_path, class: "button"
+          = link_to current_user.name, edit_user_registration_path
+        - else
+          = link_to "Sign In", new_user_session_path
+          = linkto "Sign Up", new_user_registration_path, class: "button"
     %p.notice= notice
     %p.alert= alert
 
