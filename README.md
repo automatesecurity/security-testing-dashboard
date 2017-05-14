@@ -19,6 +19,15 @@ The Security Testing Dashboard was created with the following components and ver
   * Devise
   * Paperclip
 
+## Usage
+To use the Security Testing Dashboard, simply follow these steps:
+* `git clone https://github.com/automatesecurity/security-testing-dashboard.git`
+* `cd security-testing-dashboard`
+* `rails s`
+* Visit http://localhost:3000
+
+*Note: The Security Testing Dashboard will be dockerized once core features are compelte*
+
 ## To-Do's
 
 * DB Schema
