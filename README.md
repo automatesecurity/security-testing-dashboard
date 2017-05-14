@@ -29,7 +29,7 @@ The following are high-level user stories for conceptualizing the features withi
     > so I can view my department's metrics 
 
 *   As a user
-    > I want an option that will aloow me to export my department's data
+    > I want an option that will allow me to export my department's data
     > so I can leverage it outside of the application
 
 *   As the admin of the site
