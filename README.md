@@ -1,3 +1,8 @@
+<a href="https://scan.coverity.com/projects/automatesecurity-security-testing-dashboard">
+  <img alt="Coverity Scan Build Status"
+       src="https://img.shields.io/coverity/scan/12715.svg"/>
+</a>
+
 # Security Testing Dashboard
 
 This project is a proof of concept for tracking 'projects' that have had security testing performed on them.
