@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 gem 'haml', '~> 5.0', '>= 5.0.1'
 gem 'simple_form', '~> 3.4'
+gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'paperclip', '~> 5.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

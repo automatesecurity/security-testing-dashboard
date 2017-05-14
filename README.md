@@ -13,6 +13,8 @@ The Security Testing Dashboard was created with the following components and ver
 * Gems
   * HAML
   * Simple Form
+  * Devise
+  * Paperclip
 
 ## To-Do's
 
