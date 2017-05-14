@@ -1,3 +1,5 @@
 %h1 Placeholder title
 - @projects.each do |project|
   %h2= link_to project.title, project
+
+= link_to "Add New Project", new_project_path
