@@ -22,7 +22,7 @@ gem 'brakeman', '~> 3.6', '>= 3.6.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rake', '~> 12.0'
+  gem 'rake', '~> 12.3'
 end
 
 group :development do
