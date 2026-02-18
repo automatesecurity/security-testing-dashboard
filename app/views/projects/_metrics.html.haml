@@ -1,0 +1,57 @@
+-# Metrics visualization for Projects
+-# Uses instance vars set in ProjectsController#index.
+
+.row
+  .col-md-6
+    %h3 Projects by Department
+    %div{:id => "department-chart", :style => "height: 320px;"}
+
+  .col-md-6
+    %h3 Projects by Test Type
+    %div{:id => "testtype-chart", :style => "height: 320px;"}
+
+.row.mt-4
+  .col-md-12
+    %h3 Average Cost by Department
+    %div{:id => "avgcost-chart", :style => "height: 320px;"}
+
+:javascript
+  document.addEventListener('DOMContentLoaded', function () {
+    var projectsByDepartment = #{(@projects_by_department || {}).to_json};
+    var projectsByTestType = #{(@projects_by_test_type || {}).to_json};
+    var avgCostByDepartment = #{(@cost_by_department || {}).transform_values { |v| v&.to_f }.to_json};
+
+    function objectToSeries(obj) {
+      return Object.keys(obj).map(function (k) {
+        return { name: (k && k.length ? k : '(none)'), y: obj[k] };
+      });
+    }
+
+    Highcharts.chart('department-chart', {
+      chart: { type: 'column' },
+      title: { text: null },
+      xAxis: { type: 'category' },
+      yAxis: { title: { text: 'Projects' }, allowDecimals: false },
+      legend: { enabled: false },
+      series: [{ name: 'Projects', data: objectToSeries(projectsByDepartment) }]
+    });
+
+    Highcharts.chart('testtype-chart', {
+      chart: { type: 'bar' },
+      title: { text: null },
+      xAxis: { type: 'category' },
+      yAxis: { title: { text: 'Projects' }, allowDecimals: false },
+      legend: { enabled: false },
+      series: [{ name: 'Projects', data: objectToSeries(projectsByTestType) }]
+    });
+
+    Highcharts.chart('avgcost-chart', {
+      chart: { type: 'line' },
+      title: { text: null },
+      xAxis: { type: 'category' },
+      yAxis: { title: { text: 'Avg Cost' } },
+      legend: { enabled: false },
+      tooltip: { valueDecimals: 2 },
+      series: [{ name: 'Avg Cost', data: objectToSeries(avgCostByDepartment) }]
+    });
+  });

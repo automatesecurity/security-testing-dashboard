@@ -3,7 +3,12 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-  	@projects = Project.all.order("created_at DESC")
+    @projects = Project.all.order("created_at DESC")
+
+    # Basic metrics for visualization.
+    @projects_by_department = Project.group(:department).count
+    @projects_by_test_type = Project.group(:test_type).count
+    @cost_by_department = Project.group(:department).average(:cost)
   end
 
   def show
