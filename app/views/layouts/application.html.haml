@@ -1,25 +1,48 @@
 !!!
 %html
-%head
-  %title Security Testing Dashboard
-  = csrf_meta_tags
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"}
-  %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
+  %head
+    %title Security Testing Dashboard
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %link{ rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" }
+    %link{ rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous" }
 
   %body
-    %header
-      .wrapper.clearfix
-      #logo= link_to "Security Testing Dashboard", root_path
-      %nav
-        - if user_signed_in?
-          = link_to "Add New Project", new_project_path, class: "button"
-          = link_to current_user.name, edit_user_registration_path
-        - else
-          = link_to "Sign In", new_user_session_path
-          = linkto "Sign Up", new_user_registration_path, class: "button"
-    %p.notice= notice
-    %p.alert= alert
+    %script{ src: "https://code.jquery.com/jquery-3.1.1.slim.min.js", integrity: "sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n", crossorigin: "anonymous" }
+    %script{ src: "https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js", integrity: "sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", crossorigin: "anonymous" }
+    %script{ src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js", integrity: "sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn", crossorigin: "anonymous" }
 
-    = yield
+    %nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+      .container
+        = link_to "Security Testing Dashboard", root_path, class: "navbar-brand"
+
+        %button.navbar-toggler.navbar-toggler-right{ type: "button", data: { toggle: "collapse", target: "#navbarNav" }, aria: { controls: "navbarNav", expanded: "false", label: "Toggle navigation" } }
+          %span.navbar-toggler-icon
+
+        #navbarNav.collapse.navbar-collapse
+          %ul.navbar-nav.mr-auto
+            - if user_signed_in?
+              %li.nav-item
+                = link_to "Add New Project", new_project_path, class: "nav-link"
+
+          %ul.navbar-nav
+            - if user_signed_in?
+              %li.nav-item
+                = link_to current_user.name, edit_user_registration_path, class: "nav-link"
+              %li.nav-item
+                = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
+            - else
+              %li.nav-item
+                = link_to "Sign In", new_user_session_path, class: "nav-link"
+              %li.nav-item
+                = link_to "Sign Up", new_user_registration_path, class: "nav-link"
+
+    .container.mt-3
+      - if notice.present?
+        .alert.alert-info= notice
+      - if alert.present?
+        .alert.alert-warning= alert
+
+      = yield
