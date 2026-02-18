@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  link: MyString
-  description: MyText
-  cost: 1
-  type: 
-  tester: MyString
-  rp: MyString
-  architect: MyString
-  department: MyString
+  title: Project One
+  link: https://example.com/one
+  description: Example project
+  cost: 100
+  test_type: SAST
+  tester: Alice
+  rp: Bob
+  architect: Carol
+  department: AppSec
+  user: one
 
 two:
-  title: MyString
-  link: MyString
-  description: MyText
-  cost: 1
-  type: 
-  tester: MyString
-  rp: MyString
-  architect: MyString
-  department: MyString
+  title: Project Two
+  link: https://example.com/two
+  description: Another example project
+  cost: 200
+  test_type: DAST
+  tester: Dave
+  rp: Erin
+  architect: Frank
+  department: Platform
+  user: one

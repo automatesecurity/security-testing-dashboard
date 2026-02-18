@@ -1,4 +1,9 @@
-%h1 Placeholder title
+%h1 Projects
+
+= render 'metrics'
+
+%hr
+
 - @projects.each do |project|
   %h2= link_to project.title, project
 
